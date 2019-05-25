@@ -6,9 +6,9 @@ public class Controller : MonoBehaviour
 {
     [HideInInspector] public bool facingRight = true;
     [HideInInspector] public bool jump = false;
-    public float moveForce = 365f;
-    public float maxSpeed = 5f;
-    public float jumpForce = 1000f;
+    public float moveForce = 200f;
+    public float maxSpeed = 8f;
+    public float jumpForce = 800f;
     public Transform groundCheck;
 
 
@@ -38,13 +38,13 @@ public class Controller : MonoBehaviour
     void FixedUpdate()
     {
         float h = Input.GetAxis("Horizontal");
-
+        h /= 3;
         anim.SetFloat("Speed", Mathf.Abs(h));
 
         if (h * rb2d.velocity.x < maxSpeed)
             rb2d.AddForce(Vector2.right * h * moveForce);
 
-        if (Mathf.Abs (rb2d.velocity.x) > maxSpeed)
+        if (Mathf.Abs (rb2d.velocity.x) >= maxSpeed)
             rb2d.velocity = new Vector2(Mathf.Sign (rb2d.velocity.x) * maxSpeed, rb2d.velocity.y);
 
         if (h > 0 && !facingRight)

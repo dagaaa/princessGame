@@ -69,6 +69,9 @@ TagManager:
   - name: sky
     uniqueID: 898125381
     locked: 0
+  - name: cloud
+    uniqueID: 1802916327
+    locked: 0
   - name: Ground
     uniqueID: 3797851597
     locked: 0
