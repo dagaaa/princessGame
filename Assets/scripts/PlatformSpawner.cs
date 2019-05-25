@@ -11,7 +11,7 @@ public class PlatformSpawner : MonoBehaviour
     public float horizontalMin = 1.5f;
     public float horizontalMax = 3.5f;
     public float verticalMin = -3f;
-    public float verticalMax = 2f;
+    public float verticalMax = 1.5f;
 
 
     private Vector2 originPosition;
