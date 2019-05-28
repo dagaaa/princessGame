@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class FollowThePath : MonoBehaviour
 {
@@ -15,7 +16,19 @@ public class FollowThePath : MonoBehaviour
 
   
     private void Start () {
-        transform.position = waypoints[waypointIndex].transform.position;
+//        transform.position = waypoints[waypointIndex].transform.position;
+        Vector3 currentPosition;
+        for (int i = 0; i < waypoints.Length; i++)
+        {
+           currentPosition = new Vector3(waypoints[i].position.x + transform.position.x,transform.position.y,0);
+           waypoints[i].position = currentPosition;
+        }
+            
+        for (int i = 0; i < waypoints.Length; i++)
+        {
+            if (waypoints[i].position == transform.position)
+                waypointIndex = i;
+        }
     }
 
     private void Update () {

@@ -992,7 +992,7 @@ MonoBehaviour:
   - {fileID: 1427801702}
   - {fileID: 1360892217}
   - {fileID: 820144537}
-  moveSpeed: 0.5
+  moveSpeed: 0.1
 --- !u!1 &1214853341 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100020, guid: 6aa187bc6339843479c03fdfd71404a3,
