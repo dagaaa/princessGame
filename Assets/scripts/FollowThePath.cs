@@ -56,7 +56,7 @@ public class FollowThePath : MonoBehaviour
         transform.position = Vector2.MoveTowards(
             transform.position,
             dynamicWayPoints[waypointIndex].transform.position,
-            moveSpeed);
+            moveSpeed * Time.timeScale);
 
         if (Math.Abs(transform.position.x - dynamicWayPoints[waypointIndex].transform.position.x) < TOLERANCE)
         {
