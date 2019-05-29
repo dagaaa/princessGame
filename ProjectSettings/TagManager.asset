@@ -16,6 +16,7 @@ TagManager:
   - Pickup
   - EnemyTop
   - EnemySide
+  - WayPoint
   layers:
   - Default
   - TransparentFX
