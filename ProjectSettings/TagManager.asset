@@ -74,6 +74,9 @@ TagManager:
   - name: cloud
     uniqueID: 1802916327
     locked: 0
+  - name: castle
+    uniqueID: 475293823
+    locked: 0
   - name: Ground
     uniqueID: 3797851597
     locked: 0

@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class PickupCoin : MonoBehaviour
 {
-    public int countCoin;
-    
+    private int _countCoin;
+    private EndfGame endfGame;
     public TextMeshProUGUI countText;
     // Start is called before the first frame update
     void Start()
     {
         
        
-        countCoin = 0;
+        _countCoin = 0;
         SetCountText();
 
     }
@@ -24,19 +24,25 @@ public class PickupCoin : MonoBehaviour
 
     }
 
+    void Awake()
+    {
+        endfGame = GameObject.FindObjectOfType<EndfGame>();
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Pickup"))
         {
-            countCoin++;
+            _countCoin++;
             Destroy(other.gameObject);
             SetCountText();
+            endfGame.UpdateCoins(_countCoin);
         }
     }
 
    private void SetCountText()
     {
-        countText.text = "Coins:" + countCoin.ToString();
+        countText.text = "Coins:" + _countCoin.ToString();
     }
 
 }
