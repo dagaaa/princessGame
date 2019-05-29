@@ -14,6 +14,8 @@ TagManager:
   - ExplosionFX
   - HealthBar
   - Pickup
+  - EnemyTop
+  - EnemySide
   layers:
   - Default
   - TransparentFX
