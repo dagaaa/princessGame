@@ -1219,6 +1219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxGrounds: 5
   ground: {fileID: 127695734}
+  wayPoint: {fileID: 0}
   width: 40.56
 --- !u!4 &1002306048
 Transform:
@@ -1408,12 +1409,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de34d76fb8acb5342bc518ca83321c9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 1963458882}
-  - {fileID: 1744627055}
-  - {fileID: 1427801702}
-  - {fileID: 1360892217}
-  - {fileID: 820144537}
   moveSpeed: 0.1
 --- !u!4 &1196871497 stripped
 Transform:
@@ -1606,6 +1601,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxGrounds: 20
   ground: {fileID: 471771955}
+  wayPoint: {fileID: 1963458881}
   width: 10.24
 --- !u!114 &1602215262
 MonoBehaviour:
@@ -1907,7 +1903,7 @@ GameObject:
   - component: {fileID: 1963458882}
   m_Layer: 0
   m_Name: WayPoint
-  m_TagString: Untagged
+  m_TagString: WayPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
