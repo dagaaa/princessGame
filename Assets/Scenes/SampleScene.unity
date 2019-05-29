@@ -1377,7 +1377,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxGrounds: 5
   ground: {fileID: 127695734}
-  wayPoint: {fileID: 0}
   width: 40.56
 --- !u!4 &1002306048
 Transform:
@@ -1631,6 +1630,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   livesText: {fileID: 410283367}
   ghostsText: {fileID: 588094588}
+  endOfGameText: {fileID: 763495982}
   lives: 3
 --- !u!1 &1360892216
 GameObject:
