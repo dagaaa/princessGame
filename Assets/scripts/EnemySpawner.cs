@@ -1,45 +1,39 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
-using UnityEngine.UI;
-using Random = UnityEngine.Random;
+
 public class EnemySpawner : MonoBehaviour
 {
     public Transform[] enemyPointsSpawns;
     public GameObject enemy;
 
     private int MaxEnemyOnGround = 2;
+
     // Use this for initialization
-    void Start () {
-
+    void Start()
+    {
         Spawn();
-        
-    }
-
-  
+    } 
 
     void Spawn()
     {
-        System.Random random = new System.Random();
-        for (int i = 0; i < MaxEnemyOnGround; i++)
+        HashSet<int> possiblePositions = new HashSet<int>();
+        int maxPositions = Math.Min(enemyPointsSpawns.Length, MaxEnemyOnGround);
+        for (int i = 0; i < maxPositions; i++)
         {
-            Transform enemyPosition = null;
-            int prevPosition = -1;
-            int randomPosition=0;
-            int enemyFlip = random.Next (0, 5);
-            if (enemyFlip >= 2)
-            {
-                randomPosition = random.Next(0, enemyPointsSpawns.Length - 1);
+            possiblePositions.Add(i);
+        }
 
+        System.Random random = new System.Random();
 
-                if (randomPosition != prevPosition)
-                {
-                    prevPosition = randomPosition;
-                    enemyPosition = enemyPointsSpawns[randomPosition];
-                    Instantiate(enemy, enemyPosition.position, Quaternion.identity);
-                }
-            }
+        for (int i = 0; i < maxPositions; i++)
+        {
+            int randomPosition = possiblePositions.ElementAt(random.Next(possiblePositions.Count));
+            possiblePositions.Remove(randomPosition);
+
+            Transform enemyPosition = enemyPointsSpawns[randomPosition];
+            Instantiate(enemy, enemyPosition.position, Quaternion.identity);
         }
     }
-   
 }
